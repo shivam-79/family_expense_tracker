@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static '/css/addmember.css' %}" rel="stylesheet">
+
+<body class="bg">
+
+    <h2  class="h1" ><i>Update Member</i></h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <table class="tbl">
+                <tr>
+                    <td>
+                    <input class="form-control form-control-lg" type="text"  name="firstname" value="{{ data.firstName }}">
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control form-control-lg" type="text"  name="lastname" value="{{ data.lastName }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control form-control-lg" type="text"  name="profession" value="{{ data.profession }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control form-control-lg" type="number" name="income" value="{{ data.income }}" min="0" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Update Family Member" class="btn btn-primary btn-lg btn-block">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+</body>
+
+{% endblock %}

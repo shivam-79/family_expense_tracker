@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static '/css/month_year_total.css' %}" rel="stylesheet">
+<div class="container" align="center">
+    <h2> Get Total Monthly And Yearly Expenses </h2>
+    <form action="get_total_expense" method="post">
+        {% csrf_token %}
+
+        <label>Year:</label>
+        <select name="year" >
+            <option>{{ start_year }}</option>
+            {% for year in years %}
+                <option >{{ year }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Month:</label>
+        <select name="month">
+            <option>{{ start_month }}</option>
+            {% for month in months %}
+                <option >{{ month }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Get Total Expenses">
+
+    </form>
+</div>
+
+<div class="container2" align="center">
+
+        <h1 style="color:blue">Total expense in this month is ---- Rs.  &nbsp;  {{ monthly_exp }}</h1>
+        <h1 style="color:blue">Total expense in this year is ---- Rs.  &nbsp;   {{ yearly_exp }}</h1>
+
+</div>
+
+{% endblock %}

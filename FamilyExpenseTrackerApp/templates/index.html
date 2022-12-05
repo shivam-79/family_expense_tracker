@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static '/css/index.css' %}" rel="stylesheet">
+</head>
+<body class="bg">
+    <h2 align="center"><i><b>welcome to family expense tracker management system</b></i></h2>
+
+    <a href="{% url 'login' %}" >
+        <img class='getstart' src="{% static '/images/get_start.jpg' %}">
+    </a>
+
+
+</body>
+</html>

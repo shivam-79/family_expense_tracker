@@ -1,0 +1,28 @@
+.div1{
+margin-top:200px;
+font-size:25px;
+}
+
+.bg{
+background:url("/static/images/login_page2.jpg");
+background-size:cover;
+}
+
+input[type=text],[type=password]{
+    width:300px;
+    height:40px;
+    font-size:25px;
+    color:black;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+input[type=submit]{
+    width:120px;
+    height:40px;
+    font-size:25px;
+    color:White;
+    background-color:blue;
+    margin-bottom:20px;
+    border-radius:10px;
+}

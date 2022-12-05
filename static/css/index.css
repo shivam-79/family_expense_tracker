@@ -1,0 +1,18 @@
+h2{
+color:#189AB4;
+font-size:40px;
+
+}
+a{
+    margin-left:900px;
+}
+.bg{
+
+    background:url("/static/images/family_home.jpg");
+    background-size:cover;
+}
+.getstart{
+    margin-top:600px;
+    width:350px;
+    height:100px;
+}

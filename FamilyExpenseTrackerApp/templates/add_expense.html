@@ -1,0 +1,41 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static '/css/add_expense.css' %}" rel="stylesheet">
+<body class="bg">
+
+
+<h1 class="h1" style="margin-left:620px; color:black; margin-top:100px" ><i><b>Add Expense</b></i> </h1>
+
+
+<form action="add_expense_data" method="post">
+    {% csrf_token %}
+    <table align="center" class="tbl" >
+        <tr>
+            <td>
+            <select class="select" name="ddlN">
+                <option>--select--</option>
+                {% for i in data %}
+                    <option>{{ i.firstName }}</option>
+                {% endfor %}
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" name="txtPRPS" placeholder="Purpose"></td>
+        </tr>
+        <tr>
+            <td><input type="number" name="txtEXP" placeholder="expense" min="0"></td>
+        </tr>
+        <tr>
+            <td><input type="datetime-local" name="txtD"></td>
+        </tr>
+        <tr>
+            <td align="center"><input type="submit" value="Add expense"></td>
+        </tr>
+    </table>
+</form>
+</body>
+
+{% endblock %}
